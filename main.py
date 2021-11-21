@@ -4,6 +4,16 @@ import urllib3
 import json
 import sys
 import time
+import os
+from twilio.rest import Client
+
+
+account_sid = 'AC8454129a7b05d107c34a35313825d527'
+auth_token = '23bf3cc70dfc2e4d911dd9aa6f18221f'
+client = Client(account_sid, auth_token)
+
+
+
 url ='https://reserve-prime.apple.com/AE/en_AE/reserve/A/availability?iPP=N'
 availability_url = 'https://reserve-prime.apple.com/AE/en_AE/reserve/A/availability.json'
 products = {}
@@ -264,6 +274,12 @@ session = requests.session()
 session.verify = False
 urllib3.disable_warnings()
 
+def make_call():
+    call = client.calls.create(
+        twiml='<Response><Say>Ahoy, World!</Say></Response>',
+        to='+971585147040',
+        from_='+18043153114'
+    )
 
 def fetch_products():
     response = session.get(url, verify=False)
@@ -272,18 +288,25 @@ def fetch_products():
     global products
     products =json.loads(p_av.text)['stores']
 
-def any_available():
+def any_128_available():
 
     for part in parts:
         #print(part)
         for store in stores:
             #print(store)
             if products[store['storeNumber']][part['partNumber']]['availability']['unlocked'] == True:
-                print('an Iphone is available Please check the web page')
-                print(part)
-                sys.exit()
+                #if (part['partNumber']["capacity"] =="128GB":
+                    print('an IPHONE is available Please check the web page')
+                    print(part)
+                    make_call()
+                    sleep(30)
 
 
+
+
+def check_specific():
+    # check if available in MoE
+    pass
 
 
 
@@ -293,6 +316,6 @@ if __name__ == '__main__':
         while(True):
 
             fetch_products()
-            any_available()
+            any_128_available()
             print('We are still checking! Please Hang on there, May be Grab something to Eat!\n')
             time.sleep(5)
