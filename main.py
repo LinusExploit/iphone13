@@ -8,9 +8,7 @@ import os
 from twilio.rest import Client
 
 
-account_sid = ''
-auth_token = ''
-client = Client(account_sid, auth_token)
+
 
 
 
@@ -275,11 +273,16 @@ session.verify = False
 urllib3.disable_warnings()
 
 def make_call():
+    account_sid =""
+    auth_token = ""
+    client = Client(account_sid, auth_token)
     call = client.calls.create(
-        twiml='<Response><Say>Ahoy, World!</Say></Response>',
+        twiml='<Response><Say>Hi Boss your Iphone is available!</Say></Response>',
         to='+971585147040',
         from_='+18043153114'
+
     )
+    sys.exit()
 
 def fetch_products():
     response = session.get(url, verify=False)
@@ -295,11 +298,11 @@ def any_128_available():
         for store in stores:
             #print(store)
             if products[store['storeNumber']][part['partNumber']]['availability']['unlocked'] == True:
-                #if (part['partNumber']["capacity"] =="128GB":
-                    print('an IPHONE is available Please check the web page')
+                if (part['capacity'] =="128GB"):
+                    print('an IPHONE 13 is available Please check the web page')
                     print(part)
                     make_call()
-                    sleep(30)
+                    time.sleep(30)
 
 
 
