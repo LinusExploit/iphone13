@@ -1,4 +1,8 @@
 # iphone13
+
+<br>
+[updated to make a call]
+<br>
 Check Apple Site if an iphone13 is available
 <br>
 The script connects to apple website and once the page open purchase for any device it will alert the user.
