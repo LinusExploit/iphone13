@@ -18,3 +18,13 @@ json
 sys
 <br>
 time
+
+Example 
+<br>
+C:\Users\malhyari\PycharmProjects\iphone\venv\Scripts\python.exe C:/Users/malhyari/PycharmProjects/iphone/main.py
+<br>
+an Iphone is available Please check the web page
+<br>
+{'partNumber': 'MLVV3AA/A', 'description': 'iPhone 13 Pro 1TB Graphite', 'color': 'Graphite', 'capacity': '1TB'}
+<br>
+Process finished with exit code 0
