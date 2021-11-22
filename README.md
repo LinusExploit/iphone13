@@ -5,7 +5,7 @@
 <br>
 Check Apple Site if an iphone13 is available
 <br>
-The script connects to apple website and once the page open purchase for any device it will alert the user.
+The script connects to apple website and once the page open purchase for any device it will alert the user. The current version will make a call to the user phone number. 
 <br>
 The script can be easily customized to send the alert for a specific iphone model/capacity/color.
 <br>
