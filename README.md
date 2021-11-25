@@ -1,7 +1,7 @@
 # iphone13
-Check Apple Site if an iphone13 is available
+Check Apple Site if an iphone13 is available and give a call back stating the available phone. 
 <br>
-The script connects to apple website and once the page open purchase for any device it will alert the user.
+The script connects to apple website and once the page open purchase for any device it will alert the user. 
 <br>
 The script can be easily customized to send the alert for a specific iphone model/capacity/color.
 <br>
@@ -19,9 +19,11 @@ sys
 <br>
 time
 
+<br>
+
 Example 
 <br>
-C:\Users\malhyari\PycharmProjects\iphone\venv\Scripts\python.exe C:/Users/malhyari/PycharmProjects/iphone/main.py
+C:\Users\xxxxx\PycharmProjects\iphone\venv\Scripts\python.exe C:/Users/xxxx/PycharmProjects/iphone/main.py
 <br>
 an Iphone is available Please check the web page
 <br>
